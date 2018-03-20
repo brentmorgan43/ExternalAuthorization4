@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+<script>
+    var RegisterView = {
+        ClaimsModel: null,
+        Email: null,
+        FirstName: null,
+        LastName: null,
+        RegisterButton: null,
+
+        Initialize: function () {
+            RegisterView.Email = $('#tbRegisterEmail');
+            RegisterView.FirstName = $('#tbRegisterFirstName');
+            RegisterView.LastName = $('#tbRegisterLastName');
+            RegisterView.RegisterButton = $('#btnRegister');
+
+            RegisterView.RegisterButton.click(RegisterView.RegisterButton_click);
+            RegisterView.RetrieveExternalAuthClaims();
+        },
+
+        RetrieveExternalAuthClaims: function () {
+            var url = 'https://localhost:44384/Account/RetrieveExternalAuthClaims';
+
+            $.ajax({
+                type: "POST",
+                url: url
+            }).success(function (model, status, data) {
+                RegisterView.ClaimsModel = model;
+                RegisterView.Email.val(model.Email);
+                RegisterView.FirstName.val(model.FirstName);
+                RegisterView.LastName.val(model.LastName);
+            });
+        },
+
+        RegisterButton_click: function (e) {
+            var firstname = RegisterView.FirstName.val();
+            var lastname = RegisterView.LastName.val();
+            var email = RegisterView.Email.val();
+
+            var url = 'https://localhost:44384/Account/RegisterUser';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: { FirstName: firstname, LastName: lastname, Email: email }
+            }).success(function (model, status, data) {
+                alert('User Registered.');
+            }).error(function (data, status, errorthrown) {
+                alert(status);
+            });
+        },
+    };
+
+    $(document).ready(RegisterView.Initialize);
+</script>
+
+<h2>Register</h2>
+
+<label for="tbRegisterFirstName" class="label">First Name</label>
+<input type="text" id="tbRegisterFirstName" name="tbRegisterFirstName" />
+
+<label for="tbRegisterLastName" class="label">Last Name</label>
+<input type="text" id="tbRegisterLastName" name="tbRegisterLastName" />
+
+<label for="tbRegisterEmail" class="label">Email</label>
+<input type="text" id="tbRegisterEmail" name="tbRegisterEmail" />
+
+<br />
+<input type="button" id="btnRegister" value="Register" />

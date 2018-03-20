@@ -1,0 +1,9 @@
+C:\Source\ExternalAuthorization\ExternalAuthData\bin\Debug\netcoreapp2.0\ExternalAuthData.deps.json
+C:\Source\ExternalAuthorization\ExternalAuthData\bin\Debug\netcoreapp2.0\ExternalAuthData.dll
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.csprojResolveAssemblyReference.cache
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.csproj.CoreCompileInputs.cache
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.AssemblyInfoInputs.cache
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.AssemblyInfo.cs
+C:\Source\ExternalAuthorization\ExternalAuthData\bin\Debug\netcoreapp2.0\ExternalAuthData.pdb
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.dll
+C:\Source\ExternalAuthorization\ExternalAuthData\obj\Debug\netcoreapp2.0\ExternalAuthData.pdb
